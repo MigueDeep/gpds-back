@@ -8,6 +8,6 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-slim
 WORKDIR /app 
 COPY --from=build /app/target/gpds-autos-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 8080 
+EXPOSE 8081
 #en la sig linea cada que demos run a este contenedor esto se ejecuta; es decir se levanta la aplicacion; asi se escribe el comando palbra x palabra
 ENTRYPOINT ["java","-jar","app.jar"]
